@@ -1,0 +1,66 @@
+
+import logging
+logging.basicConfig(level=logging.DEBUG)
+
+def is_number(string):
+    try:
+        float(string)
+        return True
+    except ValueError:
+        return False
+
+
+wybor  = int(input ('Podaj działanie, posługując się odpowiednią liczbą: 1 Dodawanie, 2 Odejmowanie, 3 Mnożenie, 4 Dzielenie:  '))
+z = 0
+
+if (wybor == 1):
+    a0 = input('podaj pierwsza liczbę:  ')
+    if (is_number(a0) == False):
+        print(str (a0) + " nie jest liczbą")
+        exit()
+    else:
+        a = float(a0)
+    b0 = input('podaj drugą liczbę:  ')
+    if (is_number(b0) == False):
+        print(str (b0) + " nie jest liczbą")
+        exit()
+    else:
+        b = float(b0)
+    c0 = input('podaj trzecią liczbę:  ')
+    if (is_number(c0) == False):
+        print(str (c0) + " nie jest liczbą")
+        exit()
+    else:
+        c = float(c0)
+    logging.info ("Dodawanie %s i %s i %s",str(a), str(b),str(c))
+    z = (a+b+c)
+    print("Wynik:", z)
+
+elif (wybor == 2):
+    a = float(input('podaj pierwsza liczbę:  '))
+    b = float(input('podaj drugą liczbę:  '))
+    logging.info("Odejmowanie %s i %s", str(a), str(b))
+    z = (a-b)
+    print("Wynik:", z)
+elif (wybor == 3):
+    a = float(input('podaj pierwsza liczbę:  '))
+    b = float(input('podaj drugą liczbę:  '))
+    logging.info("Mnożenie %s i %s", str(a), str(b))
+    z = (a*b)
+    print("Wynik:", z)
+elif (wybor == 4):
+    a = float(input('podaj pierwsza liczbę:  '))
+    b = float(input('podaj drugą liczbę:  '))
+    logging.info("Dzielenie %s i %s", str(a), str(b))
+    print("Dzielenie", a, "i", b)
+    z = (a/b)
+    print("Wynik:", z)
+
+else:
+    print ('podano błędny numer wyboru działania')
+
+
+
+
+
+
