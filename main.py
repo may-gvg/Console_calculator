@@ -34,7 +34,7 @@ elif wybor == 2:
     b0 = input('podaj drugą liczbę:  ')
     b = is_number(b0)
 
-    logging.info("Odejmowanie %s od %s", str(a), str(b))
+    logging.info("Odejmowanie %s od %s", str(b), str(a))
     z = a-b
     print("Wynik:", z)
 elif wybor == 3:
@@ -51,6 +51,9 @@ elif wybor == 4:
     a = is_number(a0)
     b0 = input('podaj drugą liczbę:  ')
     b = is_number(b0)
+    if b == 0:
+        print ('Nie dzielimy przez zero')
+        exit(0)
 
     logging.info("Dzielenie %s i %s", str(a), str(b))
     print("Dzielenie", a, "przez", b)
@@ -62,6 +65,8 @@ else:
 
 
 print ("")
+
+
 
 
 
